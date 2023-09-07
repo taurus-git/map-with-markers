@@ -2,10 +2,10 @@ document.addEventListener( 'DOMContentLoaded', function () {
   const container = document.querySelector( '.button-marker-container' );
 
   function deactivateActiveButtons() {
-    const activeButton = document.querySelector( '.button-marker[data-active]' );
-    if ( activeButton ) {
-      activeButton.removeAttribute( 'data-active' );
-    }
+    const allActiveButtons = document.querySelectorAll('.button-marker[data-active]');
+    allActiveButtons.forEach(button => {
+      button.removeAttribute('data-active');
+    });
   }
 
   container.addEventListener( 'click', function ( event ) {
