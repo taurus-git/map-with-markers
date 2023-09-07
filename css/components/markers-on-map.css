@@ -1,0 +1,149 @@
+.map-with-markers {
+  background-image: url('/img/main.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.map-with-markers::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--grey);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/*Markers*/
+.button-marker {
+  position: absolute;
+}
+
+.button-marker[data-active="true"]:after {
+  content: attr(data-content);
+}
+
+.stadium {
+
+}
+
+.bridge {
+
+}
+
+.a-building {
+
+}
+
+.main-entrance {
+
+}
+
+.e-complex {
+
+}
+
+.hotel {
+
+}
+
+.building {
+
+}
+
+.residential-building {
+
+}
+
+.business-center {
+
+}
+
+.hotel-2 {
+
+}
+
+.button-marker {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  font-family: Arial, sans-serif;
+  color: var(--white);
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+.button-marker[data-active="true"] .cross:before {
+  display: none;
+}
+
+.button-marker:after {
+  content: attr(data-content);
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--white);
+  padding: 12px 10px 12px 25px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 0;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.button-marker[data-active="true"]:after {
+  opacity: 1;
+}
+
+.button-marker.green:after{
+  background: var(--green);
+}
+
+.button-marker.blue:after{
+  background: var(--blue);
+}
+
+
+.cross:before, .cross:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 10px;
+  background-color: var(--white);
+  transform-origin: center;
+  z-index: 1;
+}
+
+.cross:before {
+  transform: translate(-50%, -50%);
+}
+
+.cross:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+
