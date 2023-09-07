@@ -1,28 +1,30 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.querySelector('.map-with-markers');
-  let activeButton = null;
+document.addEventListener( 'DOMContentLoaded', function () {
+  const container = document.querySelector( '.button-marker-container' );
 
-  container.addEventListener('click', function(event) {
-    if (activeButton) {
-      activeButton.removeAttribute('data-active');
+  function deactivateActiveButtons() {
+    const activeButton = document.querySelector( '.button-marker[data-active]' );
+    if ( activeButton ) {
+      activeButton.removeAttribute( 'data-active' );
     }
+  }
 
+  container.addEventListener( 'click', function ( event ) {
     let target = event.target;
 
-    if (target.classList.contains('cross')) {
+    if ( target.classList.contains( 'cross' ) ) {
       target = target.parentNode;
     }
 
-    if (target.classList.contains('button-marker')) {
-      if (activeButton === event.target) {
-        activeButton = null;
-        return;
-      }
-
-      activeButton = event.target;
-      activeButton.setAttribute('data-active', 'true');
-    } else {
-      activeButton = null;
+    if ( !target.classList.contains( 'button-marker' ) ) {
+      deactivateActiveButtons();
+      return;
     }
-  });
-});
+
+    if (target.hasAttribute('data-active')) {
+      deactivateActiveButtons();
+    } else {
+      deactivateActiveButtons();
+      target.setAttribute('data-active', 'true');
+    }
+  } );
+} );

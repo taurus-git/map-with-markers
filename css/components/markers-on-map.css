@@ -1,4 +1,5 @@
-.map-with-markers {
+/*Container*/
+.button-marker-container {
   background-image: url('/img/main.jpg');
   background-size: cover;
   background-position: center;
@@ -7,7 +8,7 @@
   position: relative;
 }
 
-.map-with-markers::before {
+.button-marker-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -28,44 +29,62 @@
   content: attr(data-content);
 }
 
-.stadium {
+.button-marker_color_green {
+  background-color: var(--green);
+}
 
+.button-marker_color_blue {
+  background-color: var(--blue);
+}
+
+.stadium {
+  top: 43%;
+  left: 35.8%;
 }
 
 .bridge {
-
+  top: 72%;
+  left: 20.9%;
 }
 
 .a-building {
-
+  top: 23%;
+  left: 25.5%;
 }
 
 .main-entrance {
-
+  top: 60%;
+  left: 49.3%;
 }
 
 .e-complex {
-
+  top: 37%;
+  left: 50.5%;
 }
 
 .hotel {
-
+  top: 65%;
+  left: 56.3%;
 }
 
 .building {
-
+  top: 12%;
+  left: 57.4%;
 }
 
 .residential-building {
-
+  top: 73%;
+  left: 66.5%;
 }
 
 .business-center {
-
+  top: 42.9%;
+  left: 55%;
 }
 
 .hotel-2 {
-
+  top: 80%;
+  left: 36%;
 }
 
 .button-marker {
@@ -73,7 +92,6 @@
   height: 41px;
   border-radius: 50%;
   border: none;
-  background-color: transparent;
   position: relative;
   cursor: pointer;
   outline: none;
@@ -92,6 +110,8 @@
   position: absolute;
   left: 20px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: var(--white);
   padding: 12px 10px 12px 25px;
@@ -102,6 +122,8 @@
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
@@ -109,14 +131,13 @@
   opacity: 1;
 }
 
-.button-marker.green:after{
+.button-marker.button-marker_color_green:after{
   background: var(--green);
 }
 
-.button-marker.blue:after{
+.button-marker.button-marker_color_blue:after{
   background: var(--blue);
 }
-
 
 .cross:before, .cross:after {
   content: '';
@@ -126,24 +147,125 @@
   width: 2px;
   height: 10px;
   background-color: var(--white);
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
   transform-origin: center;
   z-index: 1;
 }
 
 .cross:before {
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
 .cross:after {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+  -ms-transform: translate(-50%, -50%) rotate(90deg);
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.green {
-  background-color: var(--green);
+@media screen and (max-width: 1400px) {
+  .stadium {
+    top: 43.8%;
+    left: 35.8%;
+  }
+
+  .bridge {
+    top: 68.7%;
+    left: 15.9%;
+  }
+
+  .a-building {
+    top: 25.7%;
+    left: 21%;
+  }
+
+  .main-entrance {
+    top: 60%;
+    left: 46%;
+  }
+
+  .e-complex {
+    top: 37%;
+    left: 46%;
+  }
+
+  .hotel {
+    top: 62%;
+    left: 56.3%;
+  }
+
+  .building {
+    top: 19%;
+    left: 53%;
+  }
+
+  .residential-building {
+    top: 70%;
+    left: 66.5%;
+  }
+
+  .business-center {
+    top: 42.9%;
+    left: 55%;
+  }
+
+  .hotel-2 {
+    top: 80%;
+    left: 36%;
+  }
+
 }
 
-.blue {
-  background-color: var(--blue);
+@media screen and (max-width: 1200px) {
+  .stadium {
+    top: 43.8%;
+    left: 31.8%;
+  }
+
+  .bridge {
+    top: 68.7%;
+    left: 7.9%;
+  }
+
+  .a-building {
+    top: 25.7%;
+    left: 15.9%;
+  }
+
+  .main-entrance {
+    top: 60%;
+    left: 46%;
+  }
+
+  .e-complex {
+    top: 37%;
+    left: 46%;
+  }
+
+  .hotel {
+    top: 62%;
+    left: 56.3%;
+  }
+
+  .building {
+    top: 18%;
+    left: 56%;
+  }
+
+  .residential-building {
+    top: 70%;
+    left: 60%;
+  }
+
+  .business-center {
+    top: 42.9%;
+    left: 55%;
+  }
+
+  .hotel-2 {
+    top: 80%;
+    left: 36%;
+  }
 }
-
-
